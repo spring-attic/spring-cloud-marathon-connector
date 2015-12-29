@@ -8,6 +8,9 @@ import mesosphere.marathon.client.Marathon;
 import mesosphere.marathon.client.MarathonClient;
 import mesosphere.marathon.client.model.v2.Task;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.cloud.AbstractCloudConnector;
 import org.springframework.cloud.FallbackServiceInfoCreator;
 import org.springframework.cloud.app.ApplicationInstanceInfo;
@@ -22,6 +25,8 @@ import org.springframework.cloud.util.EnvironmentAccessor;
  */
 public class MarathonCloudConnector extends AbstractCloudConnector<Task> {
 
+	private static Logger log = LoggerFactory.getLogger(MarathonCloudConnector.class);
+
 	private final EnvironmentAccessor environment = new EnvironmentAccessor();
 
 	private final Marathon marathon;
@@ -33,6 +38,7 @@ public class MarathonCloudConnector extends AbstractCloudConnector<Task> {
 			// Default value for mesos/playa
 			marathonHost = "http://10.141.141.10:8080";
 		}
+		log.info("Using Marathon Host: " + marathonHost);
 		this.marathon = MarathonClient.getInstance(marathonHost);
 	}
 

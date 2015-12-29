@@ -22,6 +22,10 @@
 			<artifactId>spring-cloud-spring-service-connector</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>com.github.mohitsoni</groupId>
 			<artifactId>marathon-client</artifactId>
 			<version>${marathon.client.version}</version>
