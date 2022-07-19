@@ -1,3 +1,4 @@
-# spring-cloud-mesos-connector
+# spring-cloud-mesos-connector is no longer actively maintained by VMware, Inc.
+
 
 Hello World!
